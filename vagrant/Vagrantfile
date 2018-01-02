@@ -3,6 +3,10 @@ Vagrant.require_version ">= 1.7.0"
 $os_image = (ENV['OS_IMAGE'] || "ubuntu16").to_sym
 
 Vagrant.configure("2") do |config|
+
+  config.ssh.username = 'vagrant'
+  config.ssh.password = 'vagrant'
+
   config.vm.provider "virtualbox"
 
   def set_vbox(vb, config)
